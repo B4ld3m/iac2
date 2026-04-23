@@ -5,13 +5,13 @@ api_port={
 }
 
 web_port = {
-  default = "4001"
-  dev     = "5001"
-  qa      = "6001"
+  default = "80"
+  dev     = "4001"
+  qa      = "5001"
 }
 
 bd_port = {
-  default = "4003"
-  dev     = "5003"
-  qa      = "6003"
+  default = "5432"
+  dev     = "4003"
+  qa      = "5003"
 }
