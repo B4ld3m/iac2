@@ -30,3 +30,7 @@ resource "docker_container" "bd" {
     external = var.bd_port[terraform.workspace]
   }
 }
+# Network
+resource "docker_network" "private_network" {
+  name = "${terraform.workspace}_network"
+}
