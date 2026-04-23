@@ -7,6 +7,10 @@ resource "docker_container" "api" {
     internal = "3000"
     external = var.api_port[terraform.workspace]
   }
+
+  networks_advanced {
+    name = docker_network.private_network.name
+  }
 }
 
 # Frontend
@@ -18,6 +22,10 @@ resource "docker_container" "web" {
     internal = "80"
     external = var.web_port[terraform.workspace]
   }
+
+  networks_advanced {
+    name = docker_network.private_network.name
+  }
 }
 
 # Base de datos
@@ -28,6 +36,10 @@ resource "docker_container" "bd" {
   ports {
     internal = "5432"
     external = var.bd_port[terraform.workspace]
+  }
+
+  networks_advanced {
+    name = docker_network.private_network.name
   }
 }
 # Network
