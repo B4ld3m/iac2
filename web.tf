@@ -32,6 +32,7 @@ resource "docker_container" "web" {
 resource "docker_container" "bd" {
   name  = "bd-${terraform.workspace}"
   image = "postgres"
+  env = ["POSTGRES_PASSWORD=secret"]
 
   ports {
     internal = "5432"
